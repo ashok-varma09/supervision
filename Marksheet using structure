@@ -13,7 +13,8 @@ struct student
 int main()
 {
     struct student std[5];
-    int total[5],avg[5];// for average avg
+    int total[5];
+    float avg[5];// for average avg
     
     //declaring roll numbers of students 
     
@@ -88,30 +89,30 @@ int main()
     {
         if (i==0)
         {
-         avg[0]=total[0]/3;
+         avg[0]=(int)total[0]/3;
         }
        else if (i==2)
         {
-             avg[1]=total[1]/3;
+             avg[1]=(int)total[1]/3;
         }
        else if (i==3)
        {
-           avg[2] = total[2]/3;  
+           avg[2] =(int)total[2]/3;  
        }
        else if (i==4)
        {
-           avg[3]=total[3]/3;  
+           avg[3]=(int)total[3]/3;  
        }
        else 
        {
-           avg[4]=total[4]/3;  
+           avg[4]=(int)total[4]/3;  
        }
     }
    
    printf("RESULT\n-------------------\n");
    for (int i=0;i<5;i++)
    {
-      printf("\n%s(%d)\nChemistry = %d\nMath = %d\nPhysics = %d\nTotal 300/%d\nPercentage %d%%\n",std[i].name,std[i].roll_no,std[i].chem_marks,std[i].math_marks,std[i].phy_marks,total[i],avg[i]); 
+      printf("\n%s(%d)\nChemistry = %d\nMath = %d\nPhysics = %d\nTotal 300/%d\nPercentage %.2f%%\n",std[i].name,std[i].roll_no,std[i].chem_marks,std[i].math_marks,std[i].phy_marks,total[i],avg[i]); 
    }
    
     return 0;
