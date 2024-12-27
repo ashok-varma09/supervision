@@ -1,0 +1,44 @@
+
+#include <stdio.h>
+
+int main()
+{
+   int temp_even[50],temp_odd[50],index_even=0,index_odd=0;
+   
+   
+   FILE *ptr= fopen("even.text","w");
+   FILE *ptr2= fopen("odd.text","w");
+   if (ptr==NULL || ptr2==NULL)
+   {
+      printf("FIle not found");
+      return 0;
+   }
+   
+   for (int i=50;i<=70;i++)
+   {
+       if (i%2==0)
+       {
+           temp_even[index_even]=i;
+           index_even++;
+       }
+       else 
+       {
+         temp_odd[index_odd]=i;
+         index_odd++;
+       }
+   }
+    
+   for (int i=0;i<index_even;i++)
+   {
+       fprintf(ptr,"%d,",temp_even[i]);
+   }
+    
+   for (int i=0;i<index_odd;i++)
+   {
+      fprintf(ptr2,"%d,",temp_odd[i]); 
+   }
+    
+   
+   
+    return 0;
+}
