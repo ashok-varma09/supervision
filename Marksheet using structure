@@ -1,0 +1,118 @@
+
+#include <stdio.h>
+#include<string.h>
+struct student 
+{
+    int roll_no;
+    char name[50];
+    int chem_marks;
+    int phy_marks;
+    int math_marks;
+};
+
+int main()
+{
+    struct student std[5];
+    int total[5],avg[5];// for average avg
+    
+    //declaring roll numbers of students 
+    
+    std[0].roll_no=21;
+    std[1].roll_no=22;
+    std[2].roll_no=23;
+    std[3].roll_no=24;
+    std[4].roll_no=25;
+    
+    // declarting names of studennts 
+    
+    strcpy(std[0].name,"Ashok");
+    strcpy(std[1].name,"Jayraj");
+    strcpy(std[2].name,"Jenish");
+    strcpy(std[3].name,"Darshil");
+    strcpy(std[4].name,"Ashok");
+    
+    // declarting chem_marks
+    
+    std[0].chem_marks=67;
+    std[1].chem_marks=89;
+    std[2].chem_marks=98;
+    std[3].chem_marks=56;
+    std[4].chem_marks=78;
+    
+   
+   
+  
+   
+   std[0].phy_marks=56;
+   std[1].phy_marks=67;
+   std[2].phy_marks=78;
+   std[3].phy_marks=77;
+   std[4].phy_marks=98;
+   
+
+
+   
+   std[0].math_marks=66;
+    std[1].math_marks=71;
+    std[2].math_marks=35;
+    std[3].math_marks=56;
+     std[4].math_marks=31;
+    
+  
+ 
+    for (int i=0;i<5;i++)
+    {
+        if (i==0)
+        {
+         total[0]=std[0].chem_marks+std[0].phy_marks+std[0].math_marks;  
+        }
+       else if (i==1)
+        {
+           total[1]=std[1].chem_marks+std[1].phy_marks+std[1].math_marks;  
+        }
+       else if (i==2)
+       {
+            total[2]=std[2].chem_marks+std[2].phy_marks+std[2].math_marks;  
+       }
+       else if (i==3)
+       {
+           total[3]=std[3].chem_marks+std[3].phy_marks+std[3].math_marks;   
+       }
+       else 
+       {
+           total[4]=std[4].chem_marks+std[4].phy_marks+std[4].math_marks;   
+       }
+    }
+     
+     for (int i=0;i<5;i++)
+    {
+        if (i==0)
+        {
+         avg[0]=total[0]/3;
+        }
+       else if (i==2)
+        {
+             avg[1]=total[1]/3;
+        }
+       else if (i==3)
+       {
+           avg[2] = total[2]/3;  
+       }
+       else if (i==4)
+       {
+           avg[3]=total[3]/3;  
+       }
+       else 
+       {
+           avg[4]=total[4]/3;  
+       }
+    }
+   
+   printf("RESULT\n-------------------\n");
+   for (int i=0;i<5;i++)
+   {
+      printf("\n%s(%d)\nChemistry = %d\nMath = %d\nPhysics = %d\nTotal 300/%d\nPercentage %d%%\n",std[i].name,std[i].roll_no,std[i].chem_marks,std[i].math_marks,std[i].phy_marks,total[i],avg[i]); 
+   }
+   
+    return 0;
+}
